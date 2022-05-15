@@ -1,9 +1,9 @@
 package pl.edu.mimuw.matrix;
 
-public class fullMatrix extends sparseMatrix {
+public class FullMatrix extends DoubleMatrix {
   double[][] matrix;
 
-  public fullMatrix(double[][] values) {
+  public FullMatrix(double[][] values) {
     assert(values != null): "Podana tablica jest nullem.";  
 
     int n = values.length;
@@ -40,7 +40,7 @@ public class fullMatrix extends sparseMatrix {
       for (int j = 0; j < m; j++)
         result[i][j] = matrix[i][j] * scalar;
     
-    return new fullMatrix(result);    
+    return new FullMatrix(result);    
   }
 
   @Override
@@ -56,7 +56,7 @@ public class fullMatrix extends sparseMatrix {
       for (int j = 0; j < m; j++)
         result[i][j] = matrix[i][j] + scalar;
     
-    return new fullMatrix(result);  
+    return new FullMatrix(result);  
   }
 
   @Override
@@ -66,7 +66,7 @@ public class fullMatrix extends sparseMatrix {
 
   @Override
   public double get(int row, int column) {
-    super.shape().assertInShape(row, column);
+    shape().assertInShape(row, column);
 
     return matrix[row][column];
   }

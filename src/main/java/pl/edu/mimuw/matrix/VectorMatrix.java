@@ -2,10 +2,10 @@ package pl.edu.mimuw.matrix;
 
 import java.util.Arrays;
 
-public class vectorMatrix extends sparseMatrix {
+public class VectorMatrix extends DoubleMatrix {
   double[] vector;
   
-  public vectorMatrix(double... values) {
+  public VectorMatrix(double... values) {
     assert(values != null): "Podana tablica jest nullem.";
   
     int n = values.length;  
@@ -24,7 +24,7 @@ public class vectorMatrix extends sparseMatrix {
     for (int i = 0; i < n; i++)
       result[i] *= scalar;
 
-    return new vectorMatrix(result);  
+    return new VectorMatrix(result);  
   }
 
   @Override
@@ -36,7 +36,7 @@ public class vectorMatrix extends sparseMatrix {
     for (int i = 0; i < n; i++)
       result[i] += scalar;
 
-    return new vectorMatrix(result);     
+    return new VectorMatrix(result);     
   }
 
   @Override

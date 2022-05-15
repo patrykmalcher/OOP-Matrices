@@ -1,6 +1,6 @@
 package pl.edu.mimuw.matrix;
 
-public abstract class sparseMatrix implements IDoubleMatrix {
+public abstract class DoubleMatrix implements IDoubleMatrix {
   private Shape matrixShape;
 
   public void setMatrixShape(Shape matrixShape) {
@@ -15,7 +15,7 @@ public abstract class sparseMatrix implements IDoubleMatrix {
 
     int a = matrixShape.rows;
     int b = matrixShape.columns;
-    int c = matrixShape.columns;
+    int c = shapeOther.columns;
 
     double[][] result = new double[a][c]; 
 
@@ -24,15 +24,15 @@ public abstract class sparseMatrix implements IDoubleMatrix {
         for (int k = 0; k < b; k++)
           result[i][j] += get(i, k) * other.get(k, j);
     
-    return new fullMatrix(result);
+    return new FullMatrix(result);
   }  
 
   @Override
   public IDoubleMatrix plus(IDoubleMatrix other) {
-    assert matrixShape != other.shape(): "Niepoprawne wymiary macierzy przy dodawaniu.";
+    assert shape().equals(other.shape()): "Niepoprawne wymiary macierzy przy dodawaniu.";
 
-    int n = matrixShape.rows;
-    int m = matrixShape.columns;
+    int n = shape().rows;
+    int m = shape().columns;
 
     double[][] result = new double[n][m];
 
@@ -40,7 +40,7 @@ public abstract class sparseMatrix implements IDoubleMatrix {
       for (int j = 0; j < m; j++)
         result[i][j] = get(i, j) + other.get(i, j);
 
-    return new fullMatrix(result);    
+    return new FullMatrix(result);    
   } 
 
   @Override

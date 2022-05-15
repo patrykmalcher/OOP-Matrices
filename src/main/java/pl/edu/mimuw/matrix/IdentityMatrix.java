@@ -2,8 +2,8 @@ package pl.edu.mimuw.matrix;
 
 import java.util.Arrays;
 
-public class identityMatrix extends sparseMatrix {
-  public identityMatrix(int size) {
+public class IdentityMatrix extends DoubleMatrix {
+  public IdentityMatrix(int size) {
     setMatrixShape(Shape.matrix(size, size));  
   }
 
@@ -15,7 +15,7 @@ public class identityMatrix extends sparseMatrix {
 
     Arrays.fill(diagonal, scalar);
 
-    return new diagonalMatrix(diagonal);
+    return new DiagonalMatrix(diagonal);
   }
   
   @Override
@@ -28,7 +28,7 @@ public class identityMatrix extends sparseMatrix {
       for (int j = 0; j < size; j++)
         result[i][j] = (i == j ? 1 + scalar : scalar);
 
-    return new fullMatrix(result);    
+    return new FullMatrix(result);    
   }
 
   @Override

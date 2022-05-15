@@ -2,10 +2,10 @@ package pl.edu.mimuw.matrix;
 
 import java.util.Arrays;
 
-public class diagonalMatrix extends sparseMatrix {
+public class DiagonalMatrix extends DoubleMatrix {
   double[] diagonal;
 
-  public diagonalMatrix(double... diagonalValues) {
+  public DiagonalMatrix(double... diagonalValues) {
     assert(diagonalValues != null): "Podana tablica jest nullem.";
   
     int n = diagonalValues.length;  
@@ -24,7 +24,7 @@ public class diagonalMatrix extends sparseMatrix {
     for (int i = 0; i < n; i++)
       result[i] *= scalar;
 
-    return new diagonalMatrix(result);  
+    return new DiagonalMatrix(result);  
   }
 
   @Override
@@ -36,7 +36,7 @@ public class diagonalMatrix extends sparseMatrix {
     for (int i = 0; i < n; i++)
       result[i] += scalar;
 
-    return new diagonalMatrix(result);  
+    return new DiagonalMatrix(result);  
   }
 
   @Override

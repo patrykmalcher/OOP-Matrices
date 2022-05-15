@@ -1,15 +1,13 @@
 package pl.edu.mimuw.matrix;
 
-import java.util.Arrays;
-
-public class zeroMatrix extends sparseMatrix {
-  public zeroMatrix(Shape shape) {
+public class ZeroMatrix extends DoubleMatrix {
+  public ZeroMatrix(Shape shape) {
     setMatrixShape(shape);  
   }
 
   @Override
   public IDoubleMatrix times(double scalar) {  
-    return new zeroMatrix(shape());
+    return new ZeroMatrix(shape());
   }
 
   @Override
@@ -20,9 +18,10 @@ public class zeroMatrix extends sparseMatrix {
     double[][] res = new double[n][m];
 
     for (int i = 0; i < n; i++)
-      Arrays.fill(res[i], scalar);
+      for (int j = 0; j < m; j++)
+        res[i][j] = scalar;
 
-    return new fullMatrix(res);  
+    return new FullMatrix(res);  
   }
 
   @Override

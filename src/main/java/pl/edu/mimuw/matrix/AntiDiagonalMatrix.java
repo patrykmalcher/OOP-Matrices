@@ -2,10 +2,10 @@ package pl.edu.mimuw.matrix;
 
 import java.util.Arrays;
 
-public class antiDiagonalMatrix extends sparseMatrix {
+public class AntiDiagonalMatrix extends DoubleMatrix {
   double[] antiDiagonal;
 
-  public antiDiagonalMatrix(double... antiDiagonalValues) {
+  public AntiDiagonalMatrix(double... antiDiagonalValues) {
     assert(antiDiagonalValues != null): "Podana tablica jest nullem.";
 
     int n = antiDiagonalValues.length;  
@@ -24,7 +24,7 @@ public class antiDiagonalMatrix extends sparseMatrix {
     for (int i = 0; i < n; i++)
       result[i] *= scalar;
 
-    return new antiDiagonalMatrix(result);  
+    return new AntiDiagonalMatrix(result);  
   }
 
   @Override
@@ -36,7 +36,7 @@ public class antiDiagonalMatrix extends sparseMatrix {
     for (int i = 0; i < n; i++)
       result[i] += scalar;
 
-    return new antiDiagonalMatrix(result);  
+    return new AntiDiagonalMatrix(result);  
   }
 
   @Override
