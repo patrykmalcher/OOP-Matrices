@@ -32,4 +32,16 @@ public class DoubleMatrixFactory {
   public static IDoubleMatrix zero(Shape shape) {
     return new ZeroMatrix(shape);
   }
+
+  public static IDoubleMatrix constant(Shape shape, double value) {
+    return new ConstMatrix(shape, value);
+  }
+
+  public static IDoubleMatrix row(Shape shape, double... values) {
+    return new RowMatrix(shape, values);
+  }
+
+  public static IDoubleMatrix column(Shape shape, double... values) {
+    return new ColumnMatrix(shape, values);
+  }
 }
