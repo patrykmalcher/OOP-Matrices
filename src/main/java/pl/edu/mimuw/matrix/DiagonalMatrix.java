@@ -77,5 +77,32 @@ public class DiagonalMatrix extends DoubleMatrix {
     return Math.sqrt(result);  
   }
     
-  // public String toString();
+  @Override
+  public String toString() {
+    int n = shape().rows;
+
+    String res = "Rozmiar macierzy: " + n + " x " + n + "\n";
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++)
+        if (i == j) {
+          res += get(i, j) + " ";
+        }
+        else if (i - j >= 3) {
+          res += "0.0 ... 0.0 ";
+          j = i - 1;
+        } 
+        else if (j > i && n - j >= 3) {
+          res += "0.0 ... 0.0 ";
+          j = n;
+        }
+        else {
+          res += "0.0 ";
+        }
+
+      res += "\n";  
+    }
+        
+    return res;
+  }   
 }

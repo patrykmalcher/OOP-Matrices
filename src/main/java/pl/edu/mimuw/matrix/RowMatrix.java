@@ -71,4 +71,27 @@ public class RowMatrix extends DoubleMatrix {
 
     return Math.sqrt(res);  
   }  
+
+  @Override
+  public String toString() {
+    int n = shape().rows;
+    int m = shape().columns;
+
+    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++)
+        if (m - j >= 3) {
+          res += get(i, j) + " ... " + get(i, j);
+          j = m;  
+        }
+        else {
+          res += get(i, j) + " ";  
+        }
+
+      res += "\n";  
+    }
+    
+    return res;
+  } 
 }

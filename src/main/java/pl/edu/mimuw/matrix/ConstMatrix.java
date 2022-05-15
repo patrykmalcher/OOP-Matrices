@@ -42,5 +42,28 @@ public class ConstMatrix extends DoubleMatrix {
   @Override
   public double frobeniusNorm() {
     return Math.sqrt(value * value * shape().rows * shape().columns);
-  }     
+  }    
+
+  @Override
+  public String toString() {
+    int n = shape().rows;
+    int m = shape().columns;
+
+    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++)
+        if (m - j >= 3) {
+          res += value + " ... " + value;
+          j = m;  
+        }
+        else {
+          res += value + " ";
+        }
+
+      res += "\n";  
+    }
+    
+    return res;
+  }  
 }

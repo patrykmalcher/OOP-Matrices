@@ -215,5 +215,20 @@ public class SparseMatrix extends DoubleMatrix {
         }
     
     return new SparseMatrix(Shape.matrix(shape().rows, other.shape().columns), res.toArray(new MatrixCellValue[0]));
-  }    
+  }
+  
+  @Override
+  public String toString() {
+    int n = shape().rows;
+    int m = shape().columns;
+
+    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++)
+        res += get(i, j) + " ";
+      res += "\n";  
+    }
+    return res;
+  }  
 }   

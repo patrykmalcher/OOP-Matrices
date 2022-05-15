@@ -84,5 +84,16 @@ public class VectorMatrix extends DoubleMatrix {
     return Math.sqrt(res);  
   }
     
-  //public String to String;
+  @Override
+  public String toString() {
+    int n = shape().rows;
+    int m = shape().columns;
+
+    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+
+    for (var i: vector)
+      res += i + "\n";
+      
+    return res;
+  }  
 }

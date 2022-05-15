@@ -121,7 +121,20 @@ public class FullMatrix extends DoubleMatrix {
         result += matrix[i][j] * matrix[i][j];
 
     return Math.sqrt(result);    
-  }  
+  }
 
-  //public toString() {}
+  @Override
+  public String toString() {
+    int n = shape().rows;
+    int m = shape().columns;
+
+    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++)
+        res += get(i, j) + " ";
+      res += "\n";  
+    }
+    return res;
+  }  
 }
