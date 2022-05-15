@@ -8,8 +8,8 @@ import java.util.function.Function;
 import java.util.stream.IntStream;
 
 import static java.lang.Math.sqrt;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static pl.edu.mimuw.TestMatrixData.TEST_PRECISION;
 import static pl.edu.mimuw.matrix.DoubleMatrixFactory.*;
 import static pl.edu.mimuw.matrix.MatrixCellValue.cell;
 import static pl.edu.mimuw.matrix.Shape.matrix;
@@ -77,6 +77,33 @@ public class MatrixNormTest {
         FROBENIUS_NORM
       );
     }
+
+    @Test
+    void testconstant() {
+      testMatrixNorm(
+        constant(matrix(3, 2), -2),
+        IDoubleMatrix::frobeniusNorm,
+        4.8989794855664
+      );
+    }  
+
+    @Test
+    void testrow() {
+      testMatrixNorm(
+        row(matrix(2, 3), -2, 3),
+        IDoubleMatrix::frobeniusNorm,
+        6.2449979983984
+      );
+    }  
+
+    @Test
+    void testcolumn() {
+      testMatrixNorm(
+        column(matrix(2, 3), -2, 3, 1),
+        IDoubleMatrix::frobeniusNorm,
+        5.2915026221292
+      );
+    }  
   }
 
   @Nested
@@ -138,6 +165,33 @@ public class MatrixNormTest {
         6
       );
     }
+
+    @Test
+    void testconstant() {
+      testMatrixNorm(
+        constant(matrix(3, 2), -2),
+        IDoubleMatrix::normOne,
+        6
+      );
+    }  
+    
+    @Test
+    void testrow() {
+      testMatrixNorm(
+        row(matrix(2, 3), -2, 3),
+        IDoubleMatrix::normOne,
+        5
+      );
+    }  
+
+    @Test
+    void testcolumn() {
+      testMatrixNorm(
+        column(matrix(2, 3), -2, 3, 1),
+        IDoubleMatrix::normOne,
+        6
+      );
+    }  
   }
 
   @Nested
@@ -199,10 +253,37 @@ public class MatrixNormTest {
         6
       );
     }
+
+    @Test
+    void testconstant() {
+      testMatrixNorm(
+        constant(matrix(3, 2), -2),
+        IDoubleMatrix::normInfinity,
+        4
+      );
+    }   
+    
+    @Test
+    void testrow() {
+      testMatrixNorm(
+        row(matrix(2, 3), -2, 3),
+        IDoubleMatrix::normInfinity,
+        9
+      );
+    }  
+
+    @Test
+    void testcolumn() {
+      testMatrixNorm(
+        column(matrix(2, 3), -2, 3, 1),
+        IDoubleMatrix::normInfinity,
+        6
+      );
+    }  
   }
 
   private static void testMatrixNorm(IDoubleMatrix m, Function<IDoubleMatrix, Double> matrixNorm, double expectedNorm) {
     final var norm = matrixNorm.apply(m);
-    assertEquals(expectedNorm, norm);
+    assertEquals(expectedNorm, norm, TEST_PRECISION);
   }
 }
