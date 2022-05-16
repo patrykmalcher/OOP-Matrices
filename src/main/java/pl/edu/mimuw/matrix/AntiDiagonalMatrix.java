@@ -3,10 +3,10 @@ package pl.edu.mimuw.matrix;
 import java.util.Arrays;
 
 public class AntiDiagonalMatrix extends DoubleMatrix {
-  double[] antiDiagonal;
+  private double[] antiDiagonal;
 
   public AntiDiagonalMatrix(double... antiDiagonalValues) {
-    assert(antiDiagonalValues != null): "Podana tablica jest nullem.";
+    assert(antiDiagonalValues != null): "Invalid input.";
 
     int n = antiDiagonalValues.length;  
 
@@ -17,7 +17,7 @@ public class AntiDiagonalMatrix extends DoubleMatrix {
 
   @Override
   public IDoubleMatrix times(double scalar) {
-    int n = super.shape().rows;
+    int n = shape().rows;
         
     double[] result = Arrays.copyOf(antiDiagonal, n);
 
@@ -29,7 +29,7 @@ public class AntiDiagonalMatrix extends DoubleMatrix {
 
   @Override
   public IDoubleMatrix plus(double scalar) {
-    int n = super.shape().rows;
+    int n = shape().rows;
         
     double[] result = Arrays.copyOf(antiDiagonal, n);
 
@@ -56,7 +56,7 @@ public class AntiDiagonalMatrix extends DoubleMatrix {
   @Override
   public double normOne() {
     double result = 0;
-    int n = super.shape().rows;
+    int n = shape().rows;
 
     for (int i = 0; i < n; i++)
       result = Math.max(result, Math.abs(antiDiagonal[i]));
@@ -83,7 +83,7 @@ public class AntiDiagonalMatrix extends DoubleMatrix {
   public String toString() {
     int n = shape().rows;
 
-    String res = "Rozmiar macierzy: " + n + " x " + n + "\n";
+    String res = "Dimensions: " + n + " x " + n + "\n";
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++)

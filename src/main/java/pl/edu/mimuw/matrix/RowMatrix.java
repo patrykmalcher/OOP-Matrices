@@ -3,7 +3,7 @@ package pl.edu.mimuw.matrix;
 import java.util.Arrays;
 
 public class RowMatrix extends DoubleMatrix {
-  double[] values;
+  private double[] values;
   
   public RowMatrix(Shape shape, double... values) {
     setMatrixShape(shape);  
@@ -77,7 +77,7 @@ public class RowMatrix extends DoubleMatrix {
     int n = shape().rows;
     int m = shape().columns;
 
-    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+    String res = "Dimensions: " + n + " x " + m + "\n";
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++)
@@ -91,7 +91,7 @@ public class RowMatrix extends DoubleMatrix {
 
       res += "\n";  
     }
-    
+
     return res;
   } 
 }

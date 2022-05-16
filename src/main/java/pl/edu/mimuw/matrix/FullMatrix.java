@@ -1,20 +1,20 @@
 package pl.edu.mimuw.matrix;
 
 public class FullMatrix extends DoubleMatrix {
-  double[][] matrix;
+  private double[][] matrix;
 
   public FullMatrix(double[][] values) {
-    assert(values != null): "Podana tablica jest nullem.";  
+    assert(values != null): "Invalid input.";  
 
     int n = values.length;
 
-    assert(n > 0): "Dana tablica jest pusta.";
+    assert(n > 0): "Invalid input.";
     
     for (int i = 0; i < values.length; i++)
-      assert(values[i] != null && values[i].length > 0): "Element tablicy jest nullem lub jest pusty.";
+      assert(values[i] != null && values[i].length > 0): "Invalid input.";
 
     for (int i = 0; i + 1 < values.length; i++)
-      assert(values[i].length == values[i + 1].length): "Tablica nie jest macierzą.";
+      assert(values[i].length == values[i + 1].length): "Invalid input.";
 
     int m = values[0].length;
 
@@ -29,7 +29,7 @@ public class FullMatrix extends DoubleMatrix {
 
   @Override
   public IDoubleMatrix times(double scalar) {
-    Shape shape = super.shape();
+    Shape shape = shape();
 
     int n = shape.rows;
     int m = shape.columns;
@@ -45,7 +45,7 @@ public class FullMatrix extends DoubleMatrix {
 
   @Override
   public IDoubleMatrix plus(double scalar) {
-    Shape shape = super.shape();
+    Shape shape = shape();
 
     int n = shape.rows;
     int m = shape.columns;
@@ -75,8 +75,8 @@ public class FullMatrix extends DoubleMatrix {
   public double normOne() {
     double result = 0;
 
-    int n = super.shape().rows;
-    int m = super.shape().columns;
+    int n = shape().rows;
+    int m = shape().columns;
 
     for (int j = 0; j < m; j++) {
       double current = 0;
@@ -94,8 +94,8 @@ public class FullMatrix extends DoubleMatrix {
   public double normInfinity() {
     double result = 0;
 
-    int n = super.shape().rows;
-    int m = super.shape().columns;
+    int n = shape().rows;
+    int m = shape().columns;
 
     for (int i = 0; i < n; i++) {
       double current = 0;
@@ -111,8 +111,8 @@ public class FullMatrix extends DoubleMatrix {
 
   @Override
   public double frobeniusNorm() {
-    int n = super.shape().rows;
-    int m = super.shape().columns;
+    int n = shape().rows;
+    int m = shape().columns;
 
     double result = 0;
 
@@ -128,7 +128,7 @@ public class FullMatrix extends DoubleMatrix {
     int n = shape().rows;
     int m = shape().columns;
 
-    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+    String res = "Dimensions: " + n + " x " + m + "\n";
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++)

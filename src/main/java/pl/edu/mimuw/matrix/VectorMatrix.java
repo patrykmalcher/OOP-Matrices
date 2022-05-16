@@ -3,10 +3,10 @@ package pl.edu.mimuw.matrix;
 import java.util.Arrays;
 
 public class VectorMatrix extends DoubleMatrix {
-  double[] vector;
+  private double[] vector;
   
   public VectorMatrix(double... values) {
-    assert(values != null): "Podana tablica jest nullem.";
+    assert(values != null): "Invalid input.";
   
     int n = values.length;  
 
@@ -89,11 +89,11 @@ public class VectorMatrix extends DoubleMatrix {
     int n = shape().rows;
     int m = shape().columns;
 
-    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+    String res = "Dimensions: " + n + " x " + m + "\n";
 
     for (var i: vector)
       res += i + "\n";
-      
+
     return res;
   }  
 }

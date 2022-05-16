@@ -3,10 +3,10 @@ package pl.edu.mimuw.matrix;
 import java.util.Arrays;
 
 public class DiagonalMatrix extends DoubleMatrix {
-  double[] diagonal;
+  private double[] diagonal;
 
   public DiagonalMatrix(double... diagonalValues) {
-    assert(diagonalValues != null): "Podana tablica jest nullem.";
+    assert(diagonalValues != null): "Invalid input.";
   
     int n = diagonalValues.length;  
 
@@ -17,7 +17,7 @@ public class DiagonalMatrix extends DoubleMatrix {
 
   @Override
   public IDoubleMatrix times(double scalar) {
-    int n = super.shape().rows;
+    int n = shape().rows;
     
     double[] result = Arrays.copyOf(diagonal, n);
 
@@ -29,7 +29,7 @@ public class DiagonalMatrix extends DoubleMatrix {
 
   @Override
   public IDoubleMatrix plus(double scalar) {
-    int n = super.shape().rows;
+    int n = shape().rows;
     
     double[] result = Arrays.copyOf(diagonal, n);
 
@@ -46,7 +46,7 @@ public class DiagonalMatrix extends DoubleMatrix {
 
   @Override
   public double get(int row, int column) {
-    super.shape().assertInShape(row, column);
+    shape().assertInShape(row, column);
 
     return (row == column ? diagonal[row] : 0);
   }
@@ -54,7 +54,7 @@ public class DiagonalMatrix extends DoubleMatrix {
   @Override
   public double normOne() {
     double result = 0;
-    int n = super.shape().rows;
+    int n = shape().rows;
 
     for (int i = 0; i < n; i++)
       result = Math.max(result, Math.abs(diagonal[i]));
@@ -81,7 +81,7 @@ public class DiagonalMatrix extends DoubleMatrix {
   public String toString() {
     int n = shape().rows;
 
-    String res = "Rozmiar macierzy: " + n + " x " + n + "\n";
+    String res = "Dimensions: " + n + " x " + n + "\n";
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++)

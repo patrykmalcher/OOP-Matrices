@@ -50,5 +50,71 @@ public class Main {
     // COLUMN MATRIX
     matrix = DoubleMatrixFactory.column(Shape.matrix(10, 10), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     System.out.println(matrix);
+
+    // OPERATIONS
+
+    // MATRIX * MATRIX
+
+    IDoubleMatrix matrix1 = DoubleMatrixFactory.sparse(Shape.matrix(2, 3), 
+    MatrixCellValue.cell(0, 2, 1), MatrixCellValue.cell(1, 1, 3));
+
+    IDoubleMatrix matrix2 = DoubleMatrixFactory.full(new double[][]{
+      new double[]{1, 2},
+      new double[]{3, 4},
+      new double[]{5, 6}
+    });
+
+    System.out.println(matrix1 + "*\n" + matrix2 + "=\n" + matrix1.times(matrix2));
+
+    // MATRIX * SCALAR
+
+    matrix = DoubleMatrixFactory.identity(3);
+
+    System.out.println(matrix + "* 3 =\n" + matrix.times(3));
+
+    // MATRIX + MATRIX
+
+    matrix1 = DoubleMatrixFactory.diagonal(1, 2, 3);
+    matrix2 = DoubleMatrixFactory.antiDiagonal(1, 2, 3);
+
+    System.out.println(matrix1 + "+\n" + matrix2 + "=\n" + matrix1.plus(matrix2));
+
+    // MATRIX + SCALAR
+
+    matrix = DoubleMatrixFactory.vector(1, 2, 3);
+
+    System.out.println(matrix + "+ 3 =\n" + matrix.plus(3));
+
+    // MATRIX - MATRIX
+
+    matrix1 = DoubleMatrixFactory.zero(Shape.matrix(2, 3));
+    matrix2 = DoubleMatrixFactory.constant(Shape.matrix(2, 3), 2);
+
+    System.out.println(matrix1 + "-\n" + matrix2 + "=\n" + matrix1.minus(matrix2));
+
+    // MATRIX - SCALAR
+
+    matrix = DoubleMatrixFactory.row(Shape.matrix(2, 2), 1, 2);
+
+    System.out.println(matrix + "- 5 =\n" + matrix.minus(5));
+
+    // MATRIX[ROW][COLUMN]
+
+    matrix = DoubleMatrixFactory.column(Shape.matrix(2, 2), 1, 2);
+
+    System.out.println(matrix + "[1, 1] =\n" + matrix.get(1, 1));
+
+    // MATRIX DATA
+  
+    // MATRIX NORMONE
+  
+    // MATRIX NORMINFINITY
+  
+    // MATRIX FROBENIUSNORM
+  
+    // MATRIX TOSTRING
+  
+    // MATRIXSHAPE
+
   }
 }

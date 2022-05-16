@@ -29,7 +29,7 @@ public class SparseMatrix extends DoubleMatrix {
 
     MatrixCellValue curr = MatrixCellValue.cell(-1, -1, 0);
 
-    for (MatrixCellValue i: list) {
+    for (var i: list) {
       assert(i.row != curr.row || i.column != i.row): "Błedne dane.";
       shape().assertInShape(i.row, i.column);
     }
@@ -134,8 +134,8 @@ public class SparseMatrix extends DoubleMatrix {
   }
 
   @Override
-  public IDoubleMatrix plus(IDoubleMatrix other) { // Optymalizacja: sparse + sparse.
-    assert shape().equals(other.shape()): "Niepoprawne wymiary macierzy przy dodawaniu.";
+  public IDoubleMatrix plus(IDoubleMatrix other) { // Optimization: sparse + sparse.
+    assert shape().equals(other.shape()): "Invalid dimensions.";
 
     if (getClass() != other.getClass())
       return super.plus(other);
@@ -179,7 +179,7 @@ public class SparseMatrix extends DoubleMatrix {
   }  
   
   @Override
-  public IDoubleMatrix minus(IDoubleMatrix other) { // Optymalizacja: sparse - sparse.
+  public IDoubleMatrix minus(IDoubleMatrix other) { // Optimization: sparse - sparse.
     if (getClass() != other.getClass())
       return super.minus(other);
 
@@ -187,10 +187,10 @@ public class SparseMatrix extends DoubleMatrix {
   }    
 
   @Override
-  public IDoubleMatrix times(IDoubleMatrix other) { // Optymalizacja: sparse * sparse.
+  public IDoubleMatrix times(IDoubleMatrix other) { // Optimization: sparse * sparse.
     Shape shapeOther = other.shape();
 
-    assert(shape().columns == shapeOther.rows): "Niepoprawne wymiary macierzy przy mnożeniu.";
+    assert(shape().columns == shapeOther.rows): "Invalid dimensions.";
 
     if (getClass() != other.getClass())
       return super.times(other);
@@ -222,7 +222,7 @@ public class SparseMatrix extends DoubleMatrix {
     int n = shape().rows;
     int m = shape().columns;
 
-    String res = "Rozmiar macierzy: " + n + " x " + m + "\n";
+    String res = "Dimensions: " + n + " x " + m + "\n";
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++)

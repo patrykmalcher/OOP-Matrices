@@ -9,7 +9,7 @@ public class IdentityMatrix extends DoubleMatrix {
 
   @Override
   public IDoubleMatrix times(double scalar) {
-    int size = super.shape().rows;  
+    int size = shape().rows;  
     
     double[] diagonal = new double[size];
 
@@ -20,7 +20,7 @@ public class IdentityMatrix extends DoubleMatrix {
   
   @Override
   public IDoubleMatrix plus(double scalar) {
-    int size = super.shape().rows;
+    int size = shape().rows;
 
     double[][] result = new double[size][size];
 
@@ -38,7 +38,7 @@ public class IdentityMatrix extends DoubleMatrix {
 
   @Override
   public double get(int row, int column) {
-    super.shape().assertInShape(row, column);
+    shape().assertInShape(row, column);
     return (row == column ? 1 : 0);
   }
 
@@ -54,7 +54,7 @@ public class IdentityMatrix extends DoubleMatrix {
 
   @Override
   public double frobeniusNorm() {
-    int size = super.shape().rows;
+    int size = shape().rows;
     return Math.sqrt(size);
   }
 
@@ -62,7 +62,7 @@ public class IdentityMatrix extends DoubleMatrix {
   public String toString() {
     int n = shape().rows;
 
-    String res = "Rozmiar macierzy: " + n + " x " + n + "\n";
+    String res = "Dimensions: " + n + " x " + n + "\n";
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++)

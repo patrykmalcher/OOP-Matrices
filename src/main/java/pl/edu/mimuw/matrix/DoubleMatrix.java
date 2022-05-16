@@ -3,6 +3,7 @@ package pl.edu.mimuw.matrix;
 public abstract class DoubleMatrix implements IDoubleMatrix {
   private Shape matrixShape;
 
+  // Setter instead of constructor due to assertions.
   public void setMatrixShape(Shape matrixShape) {
     this.matrixShape = matrixShape;   
   }
@@ -11,7 +12,7 @@ public abstract class DoubleMatrix implements IDoubleMatrix {
   public IDoubleMatrix times(IDoubleMatrix other) {
     Shape shapeOther = other.shape();
 
-    assert(matrixShape.columns == shapeOther.rows): "Niepoprawne wymiary macierzy przy mnożeniu.";
+    assert(matrixShape.columns == shapeOther.rows): "Invalid dimensions.";
 
     int a = matrixShape.rows;
     int b = matrixShape.columns;
@@ -29,7 +30,7 @@ public abstract class DoubleMatrix implements IDoubleMatrix {
 
   @Override
   public IDoubleMatrix plus(IDoubleMatrix other) {
-    assert shape().equals(other.shape()): "Niepoprawne wymiary macierzy przy dodawaniu.";
+    assert shape().equals(other.shape()): "Invalid dimensions.";
 
     int n = shape().rows;
     int m = shape().columns;
@@ -50,8 +51,8 @@ public abstract class DoubleMatrix implements IDoubleMatrix {
 
   @Override
   public double[][] data() {
-    int n = matrixShape.rows;
-    int m = matrixShape.columns;
+    int n = shape().rows;
+    int m = shape().columns;
 
     double[][] result = new double[n][m];
 
