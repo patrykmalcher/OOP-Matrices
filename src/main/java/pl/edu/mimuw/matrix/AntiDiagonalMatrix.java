@@ -10,7 +10,7 @@ public class AntiDiagonalMatrix extends DoubleMatrix {
 
     int n = antiDiagonalValues.length;  
 
-    setMatrixShape(Shape.matrix(n, n));
+    setShape(Shape.matrix(n, n));
 
     antiDiagonal = Arrays.copyOf(antiDiagonalValues, n);
   }  
@@ -28,25 +28,8 @@ public class AntiDiagonalMatrix extends DoubleMatrix {
   }
 
   @Override
-  public IDoubleMatrix plus(double scalar) {
-    int n = shape().rows;
-        
-    double[] result = Arrays.copyOf(antiDiagonal, n);
-
-    for (int i = 0; i < n; i++)
-      result[i] += scalar;
-
-    return new AntiDiagonalMatrix(result);  
-  }
-
-  @Override
-  public IDoubleMatrix minus(double scalar) {
-    return plus(-scalar);
-  }
-
-  @Override
   public double get(int row, int column) {
-    super.shape().assertInShape(row, column);
+    shape().assertInShape(row, column);
 
     int n = shape().rows;
 
@@ -101,10 +84,8 @@ public class AntiDiagonalMatrix extends DoubleMatrix {
         else {
           res += "0.0 ";
         }
-
       res += "\n";  
-    }
-        
+    }   
     return res;
   }        
 }

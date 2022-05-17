@@ -10,7 +10,7 @@ public class DiagonalMatrix extends DoubleMatrix {
   
     int n = diagonalValues.length;  
 
-    setMatrixShape(Shape.matrix(n, n));
+    setShape(Shape.matrix(n, n));
 
     diagonal = Arrays.copyOf(diagonalValues, n);
   }  
@@ -25,23 +25,6 @@ public class DiagonalMatrix extends DoubleMatrix {
       result[i] *= scalar;
 
     return new DiagonalMatrix(result);  
-  }
-
-  @Override
-  public IDoubleMatrix plus(double scalar) {
-    int n = shape().rows;
-    
-    double[] result = Arrays.copyOf(diagonal, n);
-
-    for (int i = 0; i < n; i++)
-      result[i] += scalar;
-
-    return new DiagonalMatrix(result);  
-  }
-
-  @Override
-  public IDoubleMatrix minus(double scalar) {
-    return plus(-scalar);
   }
 
   @Override
@@ -99,10 +82,8 @@ public class DiagonalMatrix extends DoubleMatrix {
         else {
           res += "0.0 ";
         }
-
       res += "\n";  
     }
-        
     return res;
   }   
 }

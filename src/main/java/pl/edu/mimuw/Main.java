@@ -97,24 +97,5 @@ public class Main {
     matrix = DoubleMatrixFactory.row(Shape.matrix(2, 2), 1, 2);
 
     System.out.println(matrix + "- 5 =\n" + matrix.minus(5));
-
-    // MATRIX[ROW][COLUMN]
-
-    matrix = DoubleMatrixFactory.column(Shape.matrix(2, 2), 1, 2);
-
-    System.out.println(matrix + "[1, 1] =\n" + matrix.get(1, 1));
-
-    // MATRIX DATA
-  
-    // MATRIX NORMONE
-  
-    // MATRIX NORMINFINITY
-  
-    // MATRIX FROBENIUSNORM
-  
-    // MATRIX TOSTRING
-  
-    // MATRIXSHAPE
-
   }
 }

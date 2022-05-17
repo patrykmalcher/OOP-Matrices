@@ -10,7 +10,7 @@ public class VectorMatrix extends DoubleMatrix {
   
     int n = values.length;  
 
-    setMatrixShape(Shape.matrix(n, 1));
+    setShape(Shape.matrix(n, 1));
 
     vector = Arrays.copyOf(values, n);
   }
@@ -50,50 +50,4 @@ public class VectorMatrix extends DoubleMatrix {
 
     return vector[row];
   }
-
-  @Override
-  public double normOne() {
-    double res = 0;
-    int n = shape().rows;
-
-    for (int i = 0; i < n; i++)
-      res += Math.abs(vector[i]);
-
-    return res; 
-  }
-
-  @Override
-  public double normInfinity() {
-    double res = 0;
-    int n = shape().rows;
-
-    for (int i = 0; i < n; i++)
-      res = Math.max(res, Math.abs(vector[i]));
-    
-    return res; 
-  }
-
-  @Override
-  public double frobeniusNorm() {
-    double res = 0;
-    int n = shape().rows;
-
-    for (int i = 0; i < n; i++)
-      res += vector[i] * vector[i];
-
-    return Math.sqrt(res);  
-  }
-    
-  @Override
-  public String toString() {
-    int n = shape().rows;
-    int m = shape().columns;
-
-    String res = "Dimensions: " + n + " x " + m + "\n";
-
-    for (var i: vector)
-      res += i + "\n";
-
-    return res;
-  }  
 }

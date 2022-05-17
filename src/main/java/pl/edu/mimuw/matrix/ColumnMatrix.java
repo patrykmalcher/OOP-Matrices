@@ -6,7 +6,7 @@ public class ColumnMatrix extends DoubleMatrix {
   private double[] values;
   
   public ColumnMatrix(Shape shape, double... values) {
-    setMatrixShape(shape);  
+    setShape(Shape.matrix(shape.rows, shape.columns));  
     this.values = Arrays.copyOf(values, values.length);  
   }
  
@@ -46,7 +46,7 @@ public class ColumnMatrix extends DoubleMatrix {
   public double normOne() {
     double res = 0;
 
-    for (var i: values)
+    for (double i: values)
       res = Math.max(res, Math.abs(i));
 
     return res * shape().rows;
@@ -56,7 +56,7 @@ public class ColumnMatrix extends DoubleMatrix {
   public double normInfinity() {
     double res = 0;
 
-    for (var i: values)
+    for (double i: values)
       res += Math.abs(i);
 
     return res; 
@@ -66,26 +66,9 @@ public class ColumnMatrix extends DoubleMatrix {
   public double frobeniusNorm() {
     double res = 0;
 
-    for (var i: values)
+    for (double i: values)
       res += i * i * shape().rows;
 
     return Math.sqrt(res);  
   } 
-  
-  @Override
-  public String toString() {
-    int n = shape().rows;
-    int m = shape().columns;
-
-    String res = "Dimensions: " + n + " x " + m + "\n";
-
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++)
-        res += get(i, j) + " ";
-        
-      res += "\n";  
-    }
-
-    return res;
-  }  
 }

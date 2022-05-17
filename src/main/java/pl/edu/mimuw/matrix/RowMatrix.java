@@ -6,7 +6,7 @@ public class RowMatrix extends DoubleMatrix {
   private double[] values;
   
   public RowMatrix(Shape shape, double... values) {
-    setMatrixShape(shape);  
+    setShape(Shape.matrix(shape.rows, shape.columns));  
     this.values = Arrays.copyOf(values, values.length);  
   }
  
@@ -46,7 +46,7 @@ public class RowMatrix extends DoubleMatrix {
   public double normOne() {
     double res = 0;
 
-    for (var i: values)
+    for (double i: values)
       res += Math.abs(i);
 
     return res;  
@@ -56,7 +56,7 @@ public class RowMatrix extends DoubleMatrix {
   public double normInfinity() {
     double res = 0;
 
-    for (var i: values)
+    for (double i: values)
       res = Math.max(res, Math.abs(i));
 
     return res * shape().columns;
@@ -66,7 +66,7 @@ public class RowMatrix extends DoubleMatrix {
   public double frobeniusNorm() {
     double res = 0;
 
-    for (var i: values)
+    for (double i: values)
       res += i * i * shape().columns;
 
     return Math.sqrt(res);  
@@ -88,10 +88,8 @@ public class RowMatrix extends DoubleMatrix {
         else {
           res += get(i, j) + " ";  
         }
-
       res += "\n";  
     }
-
     return res;
   } 
 }

@@ -4,7 +4,7 @@ public class ConstMatrix extends DoubleMatrix {
   private double value;
 
   public ConstMatrix(Shape shape, double value) {
-    setMatrixShape(shape);  
+    setShape(Shape.matrix(shape.rows, shape.columns));  
     this.value = value;  
   }
 
@@ -60,10 +60,8 @@ public class ConstMatrix extends DoubleMatrix {
         else {
           res += value + " ";
         }
-
       res += "\n";  
     }
-
     return res;
   }  
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class IdentityMatrix extends DoubleMatrix {
   public IdentityMatrix(int size) {
-    setMatrixShape(Shape.matrix(size, size));  
+    setShape(Shape.matrix(size, size));  
   }
 
   @Override
@@ -18,24 +18,6 @@ public class IdentityMatrix extends DoubleMatrix {
     return new DiagonalMatrix(diagonal);
   }
   
-  @Override
-  public IDoubleMatrix plus(double scalar) {
-    int size = shape().rows;
-
-    double[][] result = new double[size][size];
-
-    for (int i = 0; i < size; i++)
-      for (int j = 0; j < size; j++)
-        result[i][j] = (i == j ? 1 + scalar : scalar);
-
-    return new FullMatrix(result);    
-  }
-
-  @Override
-  public IDoubleMatrix minus(double scalar) {
-    return plus(-scalar);
-  }
-
   @Override
   public double get(int row, int column) {
     shape().assertInShape(row, column);
@@ -80,10 +62,8 @@ public class IdentityMatrix extends DoubleMatrix {
         else {
           res += "0.0 ";
         }
-
       res += "\n";  
-    }
-        
+    }   
     return res;
   }    
 }
