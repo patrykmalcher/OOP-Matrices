@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-05-17T18:55:14" hostname="papryk" time="0.256">
+  <properties/>
+  <testcase name="testcolumn()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.148"/>
+  <testcase name="testVector()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.153"/>
+  <testcase name="testDiagonal()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.028"/>
+  <testcase name="testAntiDiagonal()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.018"/>
+  <testcase name="testSparseMatrices()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.038"/>
+  <testcase name="testrow()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.035"/>
+  <testcase name="testconstant()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.004"/>
+  <testcase name="testFullMatrices()" classname="pl.edu.mimuw.MatrixNormTest$FrobeniusNormTest" time="0.021"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

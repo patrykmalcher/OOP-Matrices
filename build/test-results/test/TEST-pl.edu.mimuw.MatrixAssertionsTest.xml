@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.edu.mimuw.MatrixAssertionsTest" tests="53" skipped="0" failures="0" errors="0" timestamp="2022-05-17T18:55:15" hostname="papryk" time="0.749">
+  <properties/>
+  <testcase name="testSparseTimesThrowsOnNotMatchedSizes()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.108"/>
+  <testcase name="testInvalidConstructThrowsOnOutboundNegativeIndices()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.109"/>
+  <testcase name="testSparseAddThrowsOnNotMatchedSizes()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.002"/>
+  <testcase name="testFullInvalidConstructThrowsOnNull()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.011"/>
+  <testcase name="testFullTimesThrowsOnNotMatchedSizes()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.122"/>
+  <testcase name="[5] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.115"/>
+  <testcase name="[5] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.123"/>
+  <testcase name="[5] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.127"/>
+  <testcase name="[1] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.203"/>
+  <testcase name="[6] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.017"/>
+  <testcase name="[6] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.007"/>
+  <testcase name="[6] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.03"/>
+  <testcase name="[7] Dimensions: 2 x 1&#10;18.0 &#10;19.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.01"/>
+  <testcase name="[2] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.011"/>
+  <testcase name="[7] Dimensions: 2 x 1&#10;18.0 &#10;19.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.017"/>
+  <testcase name="[7] Dimensions: 2 x 1&#10;18.0 &#10;19.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.012"/>
+  <testcase name="[8] Dimensions: 3 x 1&#10;15.0 &#10;16.0 &#10;17.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.001"/>
+  <testcase name="[8] Dimensions: 3 x 1&#10;15.0 &#10;16.0 &#10;17.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.016"/>
+  <testcase name="[3] Dimensions: 3 x 3&#10;7.0 0.0 0.0 &#10;0.0 8.0 0.0 &#10;0.0 0.0 9.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.012"/>
+  <testcase name="[9] Dimensions: 2 x 2&#10;1.0 0.0 &#10;0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.004"/>
+  <testcase name="[9] Dimensions: 2 x 2&#10;1.0 0.0 &#10;0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.008"/>
+  <testcase name="[8] Dimensions: 3 x 1&#10;15.0 &#10;16.0 &#10;17.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.009"/>
+  <testcase name="[10] Dimensions: 3 x 3&#10;1.0 0.0 0.0 &#10;0.0 1.0 0.0 &#10;0.0 0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.015"/>
+  <testcase name="[4] Dimensions: 3 x 3&#10;0.0 0.0 10.0 &#10;0.0 11.0 0.0 &#10;12.0 0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.003"/>
+  <testcase name="[10] Dimensions: 3 x 3&#10;1.0 0.0 0.0 &#10;0.0 1.0 0.0 &#10;0.0 0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.013"/>
+  <testcase name="[5] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.015"/>
+  <testcase name="[11] Dimensions: 3 x 2&#10;0.0 0.0 &#10;0.0 0.0 &#10;0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.006"/>
+  <testcase name="[9] Dimensions: 2 x 2&#10;1.0 0.0 &#10;0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.015"/>
+  <testcase name="[11] Dimensions: 3 x 2&#10;0.0 0.0 &#10;0.0 0.0 &#10;0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.007"/>
+  <testcase name="[10] Dimensions: 3 x 3&#10;1.0 0.0 0.0 &#10;0.0 1.0 0.0 &#10;0.0 0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.001"/>
+  <testcase name="[11] Dimensions: 3 x 2&#10;0.0 0.0 &#10;0.0 0.0 &#10;0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.002"/>
+  <testcase name="[2] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.002"/>
+  <testcase name="[6] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.024"/>
+  <testcase name="[1] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.001"/>
+  <testcase name="[4] Dimensions: 3 x 3&#10;0.0 0.0 10.0 &#10;0.0 11.0 0.0 &#10;12.0 0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.002"/>
+  <testcase name="[2] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.001"/>
+  <testcase name="[1] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.001"/>
+  <testcase name="[4] Dimensions: 3 x 3&#10;0.0 0.0 10.0 &#10;0.0 11.0 0.0 &#10;12.0 0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.001"/>
+  <testcase name="[7] Dimensions: 2 x 1&#10;18.0 &#10;19.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.014"/>
+  <testcase name="[4] Dimensions: 3 x 3&#10;0.0 0.0 10.0 &#10;0.0 11.0 0.0 &#10;12.0 0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.015"/>
+  <testcase name="[8] Dimensions: 3 x 1&#10;15.0 &#10;16.0 &#10;17.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.001"/>
+  <testcase name="[3] Dimensions: 3 x 3&#10;7.0 0.0 0.0 &#10;0.0 8.0 0.0 &#10;0.0 0.0 9.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.03"/>
+  <testcase name="[1] Dimensions: 2 x 3&#10;1.0 2.0 3.0 &#10;4.0 5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.002"/>
+  <testcase name="[9] Dimensions: 2 x 2&#10;1.0 0.0 &#10;0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.018"/>
+  <testcase name="[3] Dimensions: 3 x 3&#10;7.0 0.0 0.0 &#10;0.0 8.0 0.0 &#10;0.0 0.0 9.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.008"/>
+  <testcase name="[3] Dimensions: 3 x 3&#10;7.0 0.0 0.0 &#10;0.0 8.0 0.0 &#10;0.0 0.0 9.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.002"/>
+  <testcase name="testInvalidConstructThrowsOnOutboundIndices()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.002"/>
+  <testcase name="[11] Dimensions: 3 x 2&#10;0.0 0.0 &#10;0.0 0.0 &#10;0.0 0.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.011"/>
+  <testcase name="testInvalidConstructThrowsOnDifferentSizes()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.013"/>
+  <testcase name="testFullInvalidConstructThrowsOnEmpty()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.012"/>
+  <testcase name="[2] Dimensions: 3 x 2&#10;1.0 2.0 &#10;3.0 4.0 &#10;5.0 6.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.024"/>
+  <testcase name="testFullAddThrowsOnNotMatchedSizes()" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.018"/>
+  <testcase name="[10] Dimensions: 3 x 3&#10;1.0 0.0 0.0 &#10;0.0 1.0 0.0 &#10;0.0 0.0 1.0 &#10;" classname="pl.edu.mimuw.MatrixAssertionsTest" time="0.028"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
